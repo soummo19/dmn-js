@@ -110,6 +110,12 @@ export default class CutPaste {
       ...position
     });
 
+    // @oguz:
+    // We'd like to clear the internal clipboard after pasting
+    // since it does not got well with the OS clipboard. See this issue:
+    // https://github.com/camunda/camunda-modeler/issues/1246
+    this._clipboard.clear();
+
     return true;
   }
 
